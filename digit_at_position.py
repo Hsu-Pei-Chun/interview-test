@@ -1,3 +1,5 @@
+from timer import measure_time
+
 def find_digit_at_position(position: int) -> int:
     digit_length = 1 # 當前數字的位數 (1 位數, 2 位數, 3 位數, ...)
     start_number = 1 # 當前位數範圍的起始數字 (1, 10, 100, 1000, ...)
@@ -27,6 +29,11 @@ def find_digit_at_position(position: int) -> int:
     # 取得目標數字的指定位數
     return int(str(actual_number)[digit_in_number])
 
-print(find_digit_at_position(9)) 
+print(find_digit_at_position(9))
+measure_time(find_digit_at_position, 9)
+
 print(find_digit_at_position(200)) 
-print(find_digit_at_position(10000)) 
+measure_time(find_digit_at_position, 200)
+
+print(find_digit_at_position(10_000))
+measure_time(find_digit_at_position, 10_000) 

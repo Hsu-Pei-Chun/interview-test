@@ -1,3 +1,5 @@
+from timer import measure_time
+
 def count_no14_up_to(N: int) -> int:
     """
     回傳從 0 到 N 之間，不含 '14' 的整數個數
@@ -47,18 +49,11 @@ def count_with14_in_1_to(N: int) -> int:
     # 從 1..N 含 '14' 的個數 = N + 1 - 不含 '14'（因為包含 0）
     return (N + 1) - no14_count
 
-# ----------------------------------
-# 以下示範計算題目需求
-# ----------------------------------
+print(count_with14_in_1_to(200))
+measure_time(count_with14_in_1_to, 200)
 
-# 1) 從 1 ~ 10,000 含 '14' 有多少?
-ans1 = count_with14_in_1_to(10_000)
-print("1 ~ 10,000 含 '14' 的個數 =", ans1)
+print(count_with14_in_1_to(10_000_000))
+measure_time(count_with14_in_1_to, 10_000_000)
 
-# 2) 從 1 ~ 10,000,000 含 '14' 有多少?
-ans2 = count_with14_in_1_to(10_000_000)
-print("1 ~ 10,000,000 含 '14' 的個數 =", ans2)
-
-# 3) 從 1 ~ 10,000,000,000 含 '14' 有多少?
-ans3 = count_with14_in_1_to(10_000_000_000)
-print("1 ~ 10,000,000,000 含 '14' 的個數 =", ans3)
+print(count_with14_in_1_to(10_000_000_000))
+measure_time(count_with14_in_1_to, 10_000_000_000)
