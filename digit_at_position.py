@@ -6,7 +6,7 @@ def find_digit_at_position(position: int) -> int:
 
     while True:
         # 當前區間內數字的總數
-        count_of_numbers = 9 * digit_length * start_number
+        count_of_numbers = 9 * start_number
 
         # 當前當前區間總共佔據的位數
         total_digits_in_range = count_of_numbers * digit_length
@@ -32,7 +32,7 @@ def find_digit_at_position(position: int) -> int:
 print(find_digit_at_position(9))
 measure_time(find_digit_at_position, 9)
 
-print(find_digit_at_position(200)) 
+print(find_digit_at_position(2_000)) 
 measure_time(find_digit_at_position, 200)
 
 print(find_digit_at_position(10_000))
